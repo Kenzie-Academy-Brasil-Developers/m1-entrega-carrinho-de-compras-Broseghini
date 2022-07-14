@@ -9,13 +9,30 @@
     
     tagMain.appendChild(tagUl)
 
-    // let tagLi = document.createElement("li")
     
-    // tagUl.appendChild(tagLi)
-
+    let divCinzaEscuro = document.createElement("div")
+    
+    tagMain.appendChild(divCinzaEscuro)
+    
+    let divTotal = document.createElement("div")
+    
+    divCinzaEscuro.appendChild(divTotal)
+    
+    divTotal.innerText = "Total"
+    
+    let divSomas = document.createElement("div")
+    
+    divCinzaEscuro.appendChild(divSomas)
+    
     let btnComprar  = document.createElement("button")
 
     tagMain.appendChild(btnComprar)
+
+    btnComprar.innerText = "Finalizar Compras"
+
+       
+    // let divValorPai = document.createElement("div") 
+
 
     let carrinhoDeCompras = [
         {
@@ -38,15 +55,14 @@
             nome: "Água Tônica",
             valor:17.98,
             id:"Produtos"
-        },{
-            nome: `${somar()}`,
-            id: "Produtos"
         }
     ]
 
+    let figo = 0
+    
+    divSomas.innerText =  somar()
+    
     function somar(){
-        
-        let figo = 0
         
         for(let i = 0; i < carrinhoDeCompras.length; i++){
             
@@ -55,7 +71,7 @@
         }
         return figo
     }
-    console.log(somar())
+    // somar()
 
 
     let meLambuze = document.querySelector("ul")
@@ -74,13 +90,10 @@
     }
     listarProdutos(carrinhoDeCompras, "Produtos", meLambuze)
     function testandoProdutos(produto){
-    
          
         let nome            = produto.nome
         let valor           = produto.valor
-   
       
-        
         let tagLi       = document.createElement("li")
         let tagNome     = document.createElement("h2")
         let tagValor    = document.createElement("p")
@@ -88,8 +101,7 @@
         tagNome.innerText    = nome
         tagValor.innerText   = `R$ ${valor}`
       
-        
-      
+       
         tagLi.appendChild(tagNome)
         tagLi.appendChild(tagValor)
     
